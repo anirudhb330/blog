@@ -5,13 +5,15 @@ export const Login = () => {
   const { loginWithRedirect, isAuthenticated } = useAuth0();
   return (
     !isAuthenticated && (
-      <button
+      <div className="login">
+      <button className="login-btn"
         onClick={() => {
           loginWithRedirect();
         }}
       >
         Login
       </button>
+      </div>
     )
   );
 };

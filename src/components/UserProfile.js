@@ -6,11 +6,10 @@ const UserProfile = () => {
 
   return (
     isAuthenticated && (
-      <div>
+      <div className='login'>
         <img src={user.picture} alt={user.name} />
         <h2>{user.name}</h2>
         <p>{user.email}</p>
-        {/* {user} */}
       </div>
     )
   );
