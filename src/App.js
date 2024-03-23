@@ -1,8 +1,12 @@
 import { useAuth0 } from "@auth0/auth0-react";
-import "./App.css";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { Login } from "./components/Login";
 import { Logout } from "./components/Logout";
 import UserProfile from "./components/UserProfile";
+import Home from "./pages/Home";
+import About from "./pages/About";
+import { Dashboard } from "./pages/Dashboard";
+
 
 function App() {
   const { isLoading } = useAuth0();
@@ -10,6 +14,14 @@ function App() {
     <div>Loading..</div>
   ) : (
     <>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Home />}>
+          <Route path='/dashboard' element={<Dashboard />} />
+          <Route path="/about" element={<About />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
       <Login />
       <Logout />
       <UserProfile />
