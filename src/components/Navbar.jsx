@@ -13,10 +13,10 @@ import Tooltip from "@mui/material/Tooltip";
 import MenuItem from "@mui/material/MenuItem";
 import AdbIcon from "@mui/icons-material/Adb";
 import { useAuth0 } from "@auth0/auth0-react";
+import UserProfile from "./UserProfile";
 
 const pages = ["About", "Pricing"];
 const settings = ["Profile", "Account", "Dashboard", "Logout"];
-// const settings2 = ['Profile', 'Account', 'Dashboard', 'Logout'];
 
 const NavBar = () => {
   const { loginWithRedirect, isAuthenticated, logout, user } = useAuth0();
@@ -24,6 +24,7 @@ const NavBar = () => {
   // const [isLoggedIn, setIsLoggedIn] = React.useState(false);
   const [anchorElNav, setAnchorElNav] = React.useState(null);
   const [anchorElUser, setAnchorElUser] = React.useState(null);
+  // const[isProfile, setIsProfile] = React.useState(false);
 
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
@@ -36,9 +37,16 @@ const NavBar = () => {
     setAnchorElNav(null);
   };
 
-  const handleCloseUserMenu = () => {
+  const handleCloseUserMenu = (event) => {
     setAnchorElUser(null);
+    if(event.target.textContent === 'Logout'){
+      logout();
+    }
+    if(event.target.textContent === 'Profile'){
+      console.log("redirect to user profile");
+    }
   };
+
 
   return (
     <AppBar position="static">
@@ -60,7 +68,7 @@ const NavBar = () => {
               textDecoration: "none",
             }}
           >
-            ANIRUDH
+            Not So Serious
           </Typography>
 
           <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
@@ -154,7 +162,7 @@ const NavBar = () => {
                 onClose={handleCloseUserMenu}
               >
                 {settings.map((setting) => (
-                  <MenuItem key={setting} onClick={handleCloseUserMenu}>
+                  <MenuItem key={setting} onClick={(event)=>{handleCloseUserMenu(event)}}>
                     <Typography textAlign="center">{setting}</Typography>
                   </MenuItem>
                 ))}
@@ -162,14 +170,6 @@ const NavBar = () => {
             </Box>
           ) : (
             <>
-              {/* <button
-                className="login-button"
-                onClick={() => {
-                  loginWithRedirect();
-                }}
-              >
-                Login
-              </button> */}
               <Button variant="contained" color="secondary" onClick={()=>{loginWithRedirect();}}>
                 Login
               </Button>

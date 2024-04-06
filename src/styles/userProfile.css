@@ -1,0 +1,43 @@
+.profile {
+    display: flex;
+    justify-content: center; /* Horizontally center the profile */
+    align-items: center;
+    margin: 70px auto; /* Auto margin to center vertically */
+    max-width: 400px; /* Adjust according to your layout */
+    padding: 30px;
+    border: 10px solid #5f6667;
+    border-radius: 10px;
+    background: #1fa2ff; /* fallback for old browsers */
+    background: -webkit-linear-gradient(to top, #1fa2ff, #12d8fa, #a6ffcb); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to top, #1fa2ff, #12d8fa, #a6ffcb); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+}
+  
+  .profile-pic {
+    width: 100px;
+    height: 100px;
+    overflow: hidden;
+    border-radius: 50%;
+    margin-right: 20px;
+  }
+  
+  .profile-pic img {
+    width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  .profile-details {
+    flex-grow: 1;
+  }
+  
+  .profile-details h2 {
+    margin: 0;
+    font-size: 24px;
+  }
+  
+  .profile-details p {
+    margin: 5px 0;
+    color: #2136bc;
+  }
+  
