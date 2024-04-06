@@ -13,7 +13,7 @@ body {
 /* Style for the login button */
 .login-button {
     position: fixed; /* Fixed position */
-    top: 10px; /* Adjust this value to position vertically */
+    /* top: 10px; Adjust this value to position vertically */
     right: 10px; /* Adjust this value to position horizontally */
     padding: 10px 20px; /* Padding for the button */
     background-color: #007bff; /* Button background color */

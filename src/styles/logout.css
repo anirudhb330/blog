@@ -13,7 +13,7 @@ body {
 /* Style for the logout button */
 .logout-button {
     position: fixed; /* Fixed position */
-    top: 10px; /* Adjust this value to position vertically */
+    /* top: 10px; Adjust this value to position vertically */
     right: 10px; /* Adjust this value to position horizontally */
     padding: 10px 20px; /* Padding for the button */
     background-color: #dc3545; /* Button background color */
