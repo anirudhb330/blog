@@ -3,6 +3,7 @@ import "./App.css";
 import { Login } from "./components/Login";
 import { Logout } from "./components/Logout";
 import UserProfile from "./components/UserProfile";
+import HomePage from "./components/Homepage";
 
 function App() {
   const { isLoading } = useAuth0();
@@ -11,6 +12,7 @@ function App() {
   ) : (
     <>
       <Login />
+      <HomePage />
       <Logout />
       <UserProfile />
     </>
