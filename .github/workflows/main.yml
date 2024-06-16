@@ -23,7 +23,7 @@ jobs:
         AUTH0_DOMAIN: ${{ secrets.AUTH0_DOMAIN }}
         AUTH0_CLIENT_ID: ${{ secrets.AUTH0_CLIENT_ID }}
       run: |
-        echo "API_KEY=${{ secrets.AUTH0_DOMAIN }}" >> .env
-        echo "DB_PASSWORD=${{ secrets.AUTH0_CLIENT_ID }}" >> .env
+        echo "AUTH0_DOMAIN=${{ secrets.AUTH0_DOMAIN }}" >> .env
+        echo "AUTH0_CLIENT_ID=${{ secrets.AUTH0_CLIENT_ID }}" >> .env
         npm run build
         npm test
