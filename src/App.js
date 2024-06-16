@@ -11,7 +11,7 @@ function App() {
     <div>Loading..</div>
   ) : (
     <>
-      <Login />
+      {/* <Login /> */}
       <HomePage />
       <Logout />
       <UserProfile />
