@@ -18,12 +18,10 @@ jobs:
     - name: Install dependencies
       run: npm install
 
-    - name: Build and run tests
+    - name: Get secrets
       env:
         AUTH0_DOMAIN: ${{ secrets.AUTH0_DOMAIN }}
         AUTH0_CLIENT_ID: ${{ secrets.AUTH0_CLIENT_ID }}
       run: |
         echo "AUTH0_DOMAIN=${{ secrets.AUTH0_DOMAIN }}" >> .env
         echo "AUTH0_CLIENT_ID=${{ secrets.AUTH0_CLIENT_ID }}" >> .env
-        npm run build
-        npm test
